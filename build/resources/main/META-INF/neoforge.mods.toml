@@ -1,0 +1,46 @@
+# neoforge.mods.toml — TaCZ Runtime Compat
+# NeoForge 1.21.1 compatibility layer for old TaCZ custom gun packs.
+
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="taczruntimecompat"
+version="1.0.0"
+displayName="TaCZ Runtime Compat"
+description='''
+Runtime compatibility layer for TaCZ (Timeless and Classics Zero) unofficial.
+Automatically sanitizes invalid ResourceLocation paths from old Forge 1.20.1
+custom gun packs, replacing extra colons in the path section with underscores.
+Allows legacy gun packs to load in NeoForge 1.21.1 modpacks without editing ZIPs.
+'''
+
+# Declare the Mixin config so FML loads it at startup.
+[[mixins]]
+config="taczruntimecompat.mixins.json"
+
+# ── Dependencies ─────────────────────────────────────────────────────────────
+
+[[dependencies.taczruntimecompat]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.228,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.taczruntimecompat]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1]"
+    ordering="NONE"
+    side="BOTH"
+
+# TaCZ unofficial — load AFTER so our Mixins intercept its resource loading.
+[[dependencies.taczruntimecompat]]
+    modId="tacz"
+    type="optional"
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+    reason="This mod is a compatibility layer specifically designed for TaCZ unofficial."

@@ -1,0 +1,20 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.taczcompat.taczruntimecompat.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "taczruntimecompat.refmap.json",
+  "mixins": [
+    "ResourceLocationSanitizerMixin",
+    "DataFixTypesSanitizerMixin",
+    "BlockEntitySanitizerMixin",
+    "UtilFetchChoiceTypeMixin",
+    "ChunkStorageSanitizerMixin",
+    "SchemaSanitizerMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
