@@ -1,0 +1,18 @@
+# Gradle
+.gradle/
+build/
+/run/
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Misc
+scratch/
